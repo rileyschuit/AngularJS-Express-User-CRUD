@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5AppApp')
+angular.module('cyaF5App')
   .controller('AdminCtrl', function ($scope, $http, Auth, User) {
 
     // Use the User $resource to fetch all users

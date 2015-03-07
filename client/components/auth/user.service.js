@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5AppApp')
+angular.module('cyaF5App')
   .factory('User', function ($resource) {
     return $resource('/api/users/:id/:controller', {
       id: '@_id'

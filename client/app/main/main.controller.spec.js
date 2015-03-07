@@ -3,7 +3,7 @@
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('cyaF5AppApp'));
+  beforeEach(module('cyaF5App'));
 
   var MainCtrl,
       scope,

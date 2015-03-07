@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5AppApp', [
+angular.module('cyaF5App', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

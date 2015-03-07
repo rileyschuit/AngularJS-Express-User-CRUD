@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5AppApp')
+angular.module('cyaF5App')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/admin', {
