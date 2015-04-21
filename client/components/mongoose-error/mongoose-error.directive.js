@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('cyaF5AppApp')
+angular.module('cyaF5App')
   .directive('mongooseError', function () {
     return {
       restrict: 'A',

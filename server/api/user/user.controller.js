@@ -21,6 +21,23 @@ exports.index = function(req, res) {
 };
 
 /**
+ * Edit user
+ * restriction: 'admin'
+ */
+exports.edit = function(req, res) {
+    var userId = req.params.id;
+    var NewRole = req.body.role;
+    
+    User.findById(userId, function (err, user) {
+        user.role = NewRole;
+        user.save(function(err) {
+            res.send(200);
+        });
+    });
+};
+
+
+/**
  * Creates a new user
  */
 exports.create = function (req, res, next) {
