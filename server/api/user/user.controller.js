@@ -26,16 +26,9 @@ exports.index = function(req, res) {
  */
 exports.edit = function(req, res) {
     var userId = req.params.id;
-    var NewRole = req.body.role;
-    
-    User.findById(userId, function (err, user) {
-        user.role = NewRole;
-        user.save(function(err) {
-            res.send(200);
-        });
-    });
+    var userRole = req.params.role;
+    var userPassword = req.params.password;
 };
-
 
 /**
  * Creates a new user
@@ -45,9 +38,9 @@ exports.create = function (req, res, next) {
   newUser.provider = 'local';
   newUser.role = 'user';
   newUser.save(function(err, user) {
-    if (err) return validationError(res, err);
-    var token = jwt.sign({_id: user._id }, config.secrets.session, { expiresInMinutes: 60*5 });
-    res.json({ token: token });
+  if (err) return validationError(res, err);
+  //var token = jwt.sign({_id: req.user._id }, config.secrets.session, { expiresInMinutes: 60*5 });
+  //res.json({ token: token });
   });
 };
 

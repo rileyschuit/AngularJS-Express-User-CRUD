@@ -15,7 +15,4 @@ angular.module('cyaF5App')
       });
     };
 
-    $scope.role = function(user) {
-    };
-
   });

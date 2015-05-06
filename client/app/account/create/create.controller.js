@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cyaF5App')
-  .controller('SignupCtrl', function ($scope, Auth, $location, $window) {
+  .controller('CreateCtrl', function ($scope, User, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};
 
@@ -12,11 +12,12 @@ angular.module('cyaF5App')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          role: $scope.user.role
         })
         .then( function() {
-          // Account created, redirect to home
-          $location.path('/');
+          // Account created, redirect to user list
+          $location.path("/admin");
         })
         .catch( function(err) {
           err = err.data;

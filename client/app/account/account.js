@@ -7,9 +7,9 @@ angular.module('cyaF5App')
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginCtrl'
       })
-      .when('/signup', {
-        templateUrl: 'app/account/signup/signup.html',
-        controller: 'SignupCtrl'
+      .when('/create', {
+        templateUrl: 'app/account/create/create.html',
+        controller: 'CreateCtrl'
       })
       .when('/settings', {
         templateUrl: 'app/account/settings/settings.html',
