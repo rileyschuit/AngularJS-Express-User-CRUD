@@ -39,12 +39,12 @@ angular.module('cyaF5App')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password,
-          role: $scope.user.role
+          password: $scope.user.password
+          // role: $scope.user.role
         })
         .then( function() {
           // Account created, redirect to user list
-          $location.path("/");
+          $location.path('/admin');
         })
         .catch( function(err) {
           err = err.data;
