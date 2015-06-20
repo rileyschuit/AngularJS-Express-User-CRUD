@@ -6,5 +6,13 @@ angular.module('cyaF5App')
       .when('/admin', {
         templateUrl: 'app/admin/admin.html',
         controller: 'AdminCtrl'
+      })
+      .when('/admin/edit/:userId', {
+         templateUrl: 'app/admin/edit-user.html',
+         controller: 'AdminEditUser'
+      })
+      .when('/admin/create', {
+          templateUrl: 'app/admin/new-user.html',
+          controller: 'CreateCtrl'
       });
   });

@@ -7,8 +7,8 @@
         <strong>{{user.name}}</strong><br>
         <span class="text-muted">{{user.email}}</span>
         <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></a></span>
-        <a ng-click="edit(user)" class="edit"><span class="glyphicon glyphicon-pencil pull-right">&nbsp</a></span>
-        <a ng-click="role(user)" class="role"><span class="glyphicon glyphicon-star-empty pull-right">&nbsp</a></span></div></a></span>
+        <a href="/admin/edit/{{user._id}}"><span class="glyphicon glyphicon-pencil pull-right">&nbsp</a></span>
+        <a ng-click="role(user)" class="role"><user-role></user-role</a>
     </li>
   </ul>
 </div>
