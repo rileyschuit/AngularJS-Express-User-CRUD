@@ -72,6 +72,28 @@ angular.module('cyaF5App')
       },
 
       /**
+       * Update user
+       *
+       * @param  {Object}   user     - user info
+       * @param  {Function} callback - optional
+       * @return {Promise}
+       */
+      modifyUser: function(user, callback) {
+        var cb = callback || angular.noop;
+
+        return User.save(user,
+          function(data) {
+            $cookieStore.put('token', data.token);
+            currentUser = User.get();
+            return cb(user);
+          },
+          function(err) {
+            this.logout();
+            return cb(err);
+          }.bind(this)).$promise;
+      },
+
+      /**
        * Change password
        *
        * @param  {String}   oldPassword

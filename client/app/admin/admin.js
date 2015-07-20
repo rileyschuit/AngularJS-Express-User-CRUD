@@ -9,7 +9,7 @@ angular.module('cyaF5App')
       })
       .when('/admin/edit/:userId', {
          templateUrl: 'app/admin/edit-user.html',
-         controller: 'AdminEditUser'
+         controller: 'AdminCtrl'
       })
       .when('/admin/create', {
           templateUrl: 'app/admin/new-user.html',

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cyaF5App')
-  .controller('AdminCtrl', function ($scope, $http, Auth, User) {
+  .controller('AdminCtrl', function ($scope, $http, Auth, User, $location) {
 
     // Use the User $resource to fetch all users
     $scope.users = User.query();
@@ -14,20 +14,11 @@ angular.module('cyaF5App')
         }
       });
     };
-})
-/*
-  .controller('AdminEditUser', function ($scope, $http, User, Auth) {
-    $scope.errors = {};
-    $scope.user = ;
 
-    $http({
-        method: 'GET',
-        url: '/api/' + user._id,
-    }).success(function (result) {
-        $scope.user = result;
-    });
+    $scope.edit = function(user) {
+        $location.path('/admin/edit/' + user._id);
+    };
 })
-*/
   .controller('CreateCtrl', function ($scope, User, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};
