@@ -17,6 +17,12 @@ angular.module('cyaF5App')
         params: {
           id:'me'
         }
+      },
+      modifyUser: {
+          method: 'PUT',
+          params: {
+              controller:'edit'
+          }
       }
-	  });
+    });
   });

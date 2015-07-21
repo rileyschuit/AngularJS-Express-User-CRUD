@@ -53,7 +53,8 @@ exports.show = function (req, res, next) {
   User.findById(userId, function (err, user) {
     if (err) return next(err);
     if (!user) return res.send(401);
-    res.json(user.profile);
+    res.json(user);
+    //res.json(user.profile);
   });
 };
 

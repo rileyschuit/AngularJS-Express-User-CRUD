@@ -49,5 +49,34 @@ angular.module('cyaF5App')
         });
       }
     };
+})
+  .controller('EditCtrl', function ($scope, User, Auth, $location, $window, $http) {
+    var userid = window.location.pathname.split("/");
 
-});
+    $scope.user = {};
+    $scope.errors = {};
+
+    $http.get('/api/users/' + userid[3] + '/info')
+        .success(function(res){
+            $scope.user = res;
+    });
+
+    $scope.updateUser = function(form) {
+      $scope.submitted = true;
+      if(form.$valid) {
+          Auth.modifyUser({
+            name: $scope.user.name,
+            email: $scope.user.email,
+            // password: $scope.user.password
+            // role: $scope.user.role
+          })
+        .then( function() {
+          $scope.message = 'User updated.';
+        })
+        .catch( function(err) {
+          err = err.data;
+          $scope.errors = {};
+        });
+      }
+  };
+})
