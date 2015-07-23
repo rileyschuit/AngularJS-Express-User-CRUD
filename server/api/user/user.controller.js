@@ -24,10 +24,19 @@ exports.index = function(req, res) {
  * Edit user
  * restriction: 'admin'
  */
-exports.edit = function(req, res) {
-    var userId = req.params.id;
-    var userRole = req.params.role;
-    var userPassword = req.params.password;
+exports.edit = function(req, res, next) {
+    var userId = req.body.id;
+    var userName = req.body.name;
+    var userEmail = req.body.email
+    //var userRole = req.params.role;
+    //var userPassword = req.params.password;
+
+    User.findById(userId, function (err, user) {
+      user.save(function(err) {
+        if (err) return validationError(res, err);
+        res.send(200);
+      });
+    });
 };
 
 /**

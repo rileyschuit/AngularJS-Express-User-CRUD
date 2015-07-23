@@ -18,7 +18,7 @@ angular.module('cyaF5App')
           id:'me'
         }
       },
-      modifyUser: {
+      edit: {
           method: 'PUT',
           params: {
               controller:'edit'

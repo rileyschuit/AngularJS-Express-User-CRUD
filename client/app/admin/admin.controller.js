@@ -11,13 +11,13 @@ angular.module('cyaF5App')
       angular.forEach($scope.users, function(u, i) {
         if ( u === user  ) {
             $scope.users.splice(i, 1);
-            //alert(u.role + ' typeof: ' + typeof u.role)
         };
       });
     };
 
     $scope.edit = function(user) {
-        $location.path('/admin/edit/' + user._id);
+        //alert('/admin/' + user._id + '/edit')
+        $location.path('/admin/' + user._id + '/edit');
     };
 })
   .controller('CreateCtrl', function ($scope, User, Auth, $location, $window) {
@@ -52,12 +52,12 @@ angular.module('cyaF5App')
     };
 })
   .controller('EditCtrl', function ($scope, User, Auth, $location, $window, $http) {
-    var userid = window.location.pathname.split("/");
-
+    var path_array = window.location.pathname.split("/");
+    var userid = path_array[2];
     $scope.user = {};
     $scope.errors = {};
 
-    $http.get('/api/users/' + userid[3] + '/info')
+    $http.get('/api/users/edit/' + userid)
         .success(function(res){
             $scope.user = res;
     });
@@ -67,7 +67,7 @@ angular.module('cyaF5App')
       if(form.$valid) {
           Auth.modifyUser({
             name: $scope.user.name,
-            email: $scope.user.email,
+            email: $scope.user.email
             // password: $scope.user.password
             // role: $scope.user.role
           })

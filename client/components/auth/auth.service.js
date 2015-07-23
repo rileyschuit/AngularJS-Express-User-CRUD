@@ -74,23 +74,17 @@ angular.module('cyaF5App')
       /**
        * Update user
        *
-       * @param  {Object}   user     - user info
-       * @param  {Function} callback - optional
+       * @param  {String}  name
+       * @param  {String}  passworrd
+       * @param  {Function} callback    - optional
        * @return {Promise}
        */
-      modifyUser: function(user, callback) {
+      modifyUser: function(id, name, email, callback) {
         var cb = callback || angular.noop;
 
-        return User.save(user,
-          function(data) {
-            $cookieStore.put('token', data.token);
-            currentUser = User.get();
-            return cb(user);
-          },
-          function(err) {
-            this.logout();
-            return cb(err);
-          }.bind(this)).$promise;
+        var path_array = window.location.pathname.split("/");
+        var userid = path_array[2];
+        alert(userid);
       },
 
       /**
