@@ -79,12 +79,18 @@ angular.module('cyaF5App')
        * @param  {Function} callback    - optional
        * @return {Promise}
        */
-      modifyUser: function(id, name, email, callback) {
+      modifyUser: function(name, email, callback) {
         var cb = callback || angular.noop;
+        var user = {}
 
         var path_array = window.location.pathname.split("/");
         var userid = path_array[2];
-        alert(userid);
+
+        $http.get('/api/users/edit/' + userid)
+          .success(function(res){
+            var user = res;
+            alert(JSON.stringify(user));
+        });
       },
 
       /**

@@ -68,16 +68,7 @@ angular.module('cyaF5App')
           Auth.modifyUser({
             name: $scope.user.name,
             email: $scope.user.email
-            // password: $scope.user.password
-            // role: $scope.user.role
           })
-        .then( function() {
-          $scope.message = 'User updated.';
-        })
-        .catch( function(err) {
-          err = err.data;
-          $scope.errors = {};
-        });
       }
   };
 })
