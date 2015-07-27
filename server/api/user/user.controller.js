@@ -26,17 +26,19 @@ exports.index = function(req, res) {
  */
 exports.edit = function(req, res, next) {
     var userId = req.params.id;
-    var userName = req.body.name;
-    var userEmail = req.body.email
+    var newName = req.body.name;
+    var newEmail = req.body.email
 
-    console.log('UserID:' + userId + ', userName: ' + userName + ', userEmail: ' + userEmail);
+    console.log('UserID:' + userId + ', newName: ' + newName + ', newEmail: ' + newEmail);
 
-    User.findById(userId, function (err, user) {
+  User.findById(userId, function (err, user) {
+      user.name = newName;
+      user.email = newEmail;
       user.save(function(err) {
         if (err) return validationError(res, err);
         res.send(200);
       });
-    });
+  });
 };
 
 /**
