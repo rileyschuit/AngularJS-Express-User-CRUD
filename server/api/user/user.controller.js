@@ -25,11 +25,11 @@ exports.index = function(req, res) {
  * restriction: 'admin'
  */
 exports.edit = function(req, res, next) {
-    var userId = req.body.id;
+    var userId = req.params.id;
     var userName = req.body.name;
     var userEmail = req.body.email
-    //var userRole = req.params.role;
-    //var userPassword = req.params.password;
+
+    console.log('UserID:' + userId + ', userName: ' + userName + ', userEmail: ' + userEmail);
 
     User.findById(userId, function (err, user) {
       user.save(function(err) {

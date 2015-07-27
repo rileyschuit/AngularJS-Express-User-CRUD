@@ -66,6 +66,7 @@ angular.module('cyaF5App')
       $scope.submitted = true;
       if(form.$valid) {
           Auth.modifyUser({
+            _id: $scope.user._id,
             name: $scope.user.name,
             email: $scope.user.email
           })
