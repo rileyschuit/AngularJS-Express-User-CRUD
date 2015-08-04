@@ -7,16 +7,19 @@ angular.module('cyaF5App')
     $scope.users = User.query();
 
     $scope.delete = function(user) {
-      User.remove({ id: user._id });
-      angular.forEach($scope.users, function(u, i) {
-        if ( u === user  ) {
-            $scope.users.splice(i, 1);
-        };
-      });
+      if (user.role === 'user') {
+        User.remove({ id: user._id });
+        angular.forEach($scope.users, function(u, i) {
+          if ( u === user  ) {
+              $scope.users.splice(i, 1);
+          };
+        });
+      } else {
+        alert("You can not delete the admin account.");
+      };
     };
 
     $scope.edit = function(user) {
-        //alert('/admin/' + user._id + '/edit')
         $location.path('/admin/' + user._id + '/edit');
     };
 })
