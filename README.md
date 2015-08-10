@@ -3,4 +3,3 @@ Generated from [DaftMonk/generator-angular-fullstack](https://github.com/DaftMon
 Requirements: [Mongodb](https://github.com/mongodb/mongo)  
 Setup:  [npm](http://nodejs.org/) install && [bower](https://github.com/bower/bower) install  
 Dev run:  [grunt](https://github.com/gruntjs/grunt) serve  
-Prod build and run:  [grunt](https://github.com/gruntjs/grunt) dist:serve
