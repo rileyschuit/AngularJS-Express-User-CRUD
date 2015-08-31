@@ -1,0 +1,49 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Modify </h1>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="updatebigip(form)" novalidate>
+
+        <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+          <label>Name</label>
+
+          <input type="text" name="name" class="form-control" ng-model="bigip.name"
+                 required/>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">
+            A name is required
+          </p>
+        </div>
+
+        <div class="form-group" ng-class="{ 'has-success': form.ip.$valid && submitted,
+                                            'has-error': form.ip.$invalid && submitted }">
+          <label>Email</label>
+
+          <input type="email" name="email" class="form-control" ng-model="bigip.address"
+                 required
+                 mongoose-error/>
+          <p class="help-block" ng-show="form.address.$error.address && submitted">
+            Doesn't look like a valid ip.
+          </p>
+          <p class="help-block" ng-show="form.email.$error.mongoose">
+            {{ errors.ipaddress }}
+          </p>
+        </div>
+          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            Modify Bigip
+          </button>
+          <a class="btn btn-default btn-lg btn-register" href="/bigip">
+            Cancel
+          </a>
+        </div>
+
+        <hr>
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>

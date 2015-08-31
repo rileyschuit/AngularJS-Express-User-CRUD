@@ -80,8 +80,6 @@ angular.module('cyaF5App')
        */
       modifyUser: function(user, callback) {
         var cb = callback || angular.noop;
-        //alert(JSON.stringify(user)); // CS DEBUG
-        
         $http.put('/api/users/' + user._id + '/edit', user);
       },
 
