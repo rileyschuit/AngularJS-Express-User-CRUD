@@ -5,24 +5,7 @@
 
 'use strict';
 
-var BIGIP = require('../api/bigip/bigip.model');
 var User = require('../api/user/user.model');
-
-BIGIP.find({}).remove(function() {
-  BIGIP.create({
-    name : 'BigIP01.shakeweight.com',
-    address : '192.168.0.100',
-    active : true
-  }, {
-    name : 'BigIP01.shamwow.com',
-    address : '10.0.1.100',
-    active : true
-  }, {
-    name : 'BigIP01.mightyputty.com',
-    address : '10.10.5.100',
-    active : false
-  });
-});
 
 User.find({}).remove(function() {
   User.create({
