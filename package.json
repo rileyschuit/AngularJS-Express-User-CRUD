@@ -1,5 +1,5 @@
 {
-  "name": "cya-f5-app",
+  "name": "AngularJS-Express-User-CRUD",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
