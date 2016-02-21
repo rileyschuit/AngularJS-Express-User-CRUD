@@ -300,7 +300,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       options: {
         // This should be the name of your apps angular module
-        module: 'cyaF5App',
+        module: 'AngularJS-Express-User-CRUD',
         htmlmin: {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,

@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/cyaf5app-dev'
+    uri: 'mongodb://localhost/AngularJS-Express-User-CRUD-dev'
   },
 
   seedDB: true

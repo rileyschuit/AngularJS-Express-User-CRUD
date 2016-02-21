@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5App')
+angular.module('AngularJS-Express-User-CRUD')
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q) {
     var currentUser = {};
     if($cookieStore.get('token')) {

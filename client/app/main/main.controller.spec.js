@@ -1,28 +1,29 @@
 'use strict';
-
-describe('Controller: MainCtrl', function () {
+/*  TODO:  Test something on the main page
+describe('Controller: AdminCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('cyaF5App'));
+  beforeEach(module('AngularJS-Express-User-CRUD'));
 
-  var MainCtrl,
+  var AdminCtrl,
       scope,
       $httpBackend;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function (_$httpBackend_, $controller, $rootScope) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('/api/things')
+    $httpBackend.expectGET('/api/user')
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    AdminCtrl = $controller('AdminCtrl', {
       $scope: scope
     });
   }));
 
   it('should attach a list of things to the scope', function () {
     $httpBackend.flush();
-    expect(scope.awesomeThings.length).toBe(4);
+    expect(scope.users.length).toBe(2);
   });
 });
+*/

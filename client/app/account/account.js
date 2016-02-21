@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5App')
+angular.module('AngularJS-Express-User-CRUD')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/login', {

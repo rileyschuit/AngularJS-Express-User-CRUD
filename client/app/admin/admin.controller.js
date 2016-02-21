@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5App')
+angular.module('AngularJS-Express-User-CRUD')
   .controller('AdminCtrl', function ($scope, $http, Auth, User, $location) {
 
     // Use the User $resource to fetch all users

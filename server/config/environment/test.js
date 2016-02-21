@@ -5,6 +5,6 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/cyaf5app-test'
+    uri: 'mongodb://localhost/AngularJS-Express-User-CRUD-test'
   }
 };

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5App')
+angular.module('AngularJS-Express-User-CRUD')
   .controller('LoginCtrl', function ($scope, Auth, $location, $window) {
     $scope.user = {};
     $scope.errors = {};

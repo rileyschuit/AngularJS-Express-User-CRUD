@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cyaF5App')
+angular.module('AngularJS-Express-User-CRUD')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 
